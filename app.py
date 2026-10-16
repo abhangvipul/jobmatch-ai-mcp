@@ -104,7 +104,7 @@ if profile:
         # Submission is opt-in, requires explicit consent, and is blocked unless an
         # authorized MCP provider plus a domain allowlist are configured.
         if auto_apply_enabled and application_consent:
-            eligible = [j for j in ranked if float(j.get("match_score", 0)) > 85]
+            eligible = [j for j in ranked if float(j.get("match_score", 0)) > 70]
             st.session_state["auto_apply_results"] = []
             if not eligible:
                 st.session_state["auto_apply_results"].append({"title": "No eligible jobs", "status": "not_eligible", "message": "No result scored strictly above 85%."})
